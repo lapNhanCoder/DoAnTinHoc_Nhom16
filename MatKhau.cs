@@ -77,5 +77,73 @@ namespace DoAnTinHoc
            checkBox1.Checked = false;
             txtDoDai.Focus();
         }
+
+        private void btnManh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+          Random random = new Random();
+                int doDai = random.Next(12, 15);                          
+                    txtDoDai.Text = doDai.ToString();
+                    checkabc.Checked = true;
+                    checkBox2.Checked = true;
+                    checkBox3.Checked = true;
+                    checkBox1.Checked = true;
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Loi");
+            }
+        }
+
+        private void btnKha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random random = new Random();
+                int doDai = random.Next(9, 12);
+                txtDoDai.Text = doDai.ToString();
+                checkabc.Checked = true;
+                checkBox2.Checked = true;
+                checkBox3.Checked = true;              
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Loi");
+            }
+        }
+
+        private void btnTrungbinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random random = new Random();
+                int doDai = random.Next(5, 10);
+                txtDoDai.Text = doDai.ToString();
+                checkabc.Checked = true;
+                checkBox2.Checked = true;                            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Loi");
+            }
+        }
+
+        private void btnYeu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random random = new Random();
+                int doDai = random.Next(0, 5);
+                txtDoDai.Text = doDai.ToString();
+                checkabc.Checked = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Loi");
+            }
+        }
     }
 }
