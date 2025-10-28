@@ -23,34 +23,14 @@ namespace DoAnTinHoc
             if (coKiTu) tapKyTu += kiTu;
             //Neu khong chon gi mac dinh chu thuong
             if (tapKyTu == "") tapKyTu = chuThuong;
-            char[] matKhau = new char[doDai];
-            int seed =(int)DateTime.Now.Ticks%100000;
-            for (int i = 0; i < doDai; i++) { 
-            seed =(seed*1103515245+12345)&int .MaxValue;
-                int index = seed % tapKyTu.Length;
-                //Tranh trung ki tu
-                bool trung = false;
-                for(int j = 0; j < i; j++)
-                {
-                    if (matKhau[j] == tapKyTu[index])
-                    {
-                        trung = true; break;
-                    }
-                }
-                if (trung) {
-                    i--;
-                    continue;
-                }
-                matKhau[i] = tapKyTu[index];
-            }
-            // ghép mảng ký tự thành chuỗi
-            string ketQua = "";
-            for (int i = 0; i < doDai; i++)
+            Random random = new Random();
+            StringBuilder matKhau = new StringBuilder();
+            for(int i = 0; i < doDai; i++)
             {
-                ketQua += matKhau[i];
+                int index = random.Next(0, tapKyTu.Length);
+                matKhau.Append(tapKyTu[index]);
             }
-
-            return ketQua;
+            return matKhau.ToString();
         }
     }
 }
