@@ -9,32 +9,29 @@ namespace RandomPassword
 {
     internal class RandomPassword
     {
-        private readonly Random random = new Random();
-        private const string chuThuong = "abcdefghijklmnopqrstuvwxyz";
-        private const string chuHoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private const string so = "0123456789";
-        private const string kyTu = "!@#$%^&*()-_=+[{]};:<>|./?";
+        private static Random random = new Random(); //hàm random để sinh số ngẫu nhiên
+        private const string chuThuong = "abcdefghijklmnopqrstuvwxyz"; //hằng số chứa các ký tự thường
+        private const string chuHoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //hằng số chứa các ký tự hoa
+        private const string so = "0123456789"; //hằng số chứa các ký tự số
+        private const string kyTu = "!@#$%^&*()-_=+[{]};:<>|./?"; //hằng số chứa các ký tự đặc biệt
         //Hàm tạo mật khẩu ngẫu nhiên không trùng ký tự
         public string TaoMatKhau(int doDai, bool coThuong, bool coHoa, bool coSo, bool coKyTu)
         {
-            string tapKyTu = "";
-            if (coThuong)
+            string tapKyTu = ""; 
+            if (coThuong) 
                 tapKyTu += chuThuong;
-            if (coHoa)
+            if (coHoa) 
                 tapKyTu += chuHoa;
-            if (coSo)
+            if (coSo) 
                 tapKyTu += so;
-            if (coKyTu)
+            if (coKyTu) 
                 tapKyTu += kyTu;
-            //Nếu không chọn gì mặc định chữ thường
-            if (tapKyTu == "")
-                tapKyTu = chuThuong;
 
-           
-            StringBuilder matKhau = new StringBuilder();
+            StringBuilder matKhau = new StringBuilder(); //chuỗi chứa mật khẩu ngẫu nhiên được sinh ra
             for (int i = 0; i < doDai; i++)
             {
-                int index = this.random.Next(0, tapKyTu.Length);
+                int index = random.Next(0, tapKyTu.Length);
+                //biến index dùng để chọn ngẫu nhiên một ký tự trong tapkytu đã xây dựng ở trên
                 matKhau.Append(tapKyTu[index]);
             }
             return matKhau.ToString();

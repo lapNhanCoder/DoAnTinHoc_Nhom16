@@ -5,7 +5,6 @@ using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace RandomPassword
 {
@@ -15,21 +14,9 @@ namespace RandomPassword
         private const string chuHoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private const string so = "0123456789";
         private const string kyTu = "!@#$%^&*()-_=+[{]};:<>|./?";
-
-        public bool KiemTraRoRi(string matKhau)
-        {
-            string filePath = "leaked.txt";
-            if (!File.Exists(filePath))
-            {
-                return false;
-            }
-            var leakedPasswords = File.ReadAllLines(filePath);
-            // Sử dụng String.Equals() để so sánh matKhau với từng mật khẩu rò rỉ
-            return leakedPasswords.Any(p => string.Equals(matKhau, p, StringComparison.OrdinalIgnoreCase));
-        }
         public int RatingPassword(string matKhau)
         {
-            int score = 0;
+            int score = 0; //biến điểm để đánh giá độ mạnh mật khẩu
             if (matKhau.Length == 0)
                 return score;
             //1.Đánh giá điểm dựa trên độ dài, tối đa 50 điểm
@@ -41,10 +28,10 @@ namespace RandomPassword
                 score = matKhau.Length * 4;
 
             //2.Đánh giá điểm dựa trên sự đa dạng ký tự
-            bool coThuong = matKhau.Any(c => chuThuong.Contains(c));
-            bool coHoa = matKhau.Any(c => chuHoa.Contains(c));
-            bool coSo = matKhau.Any(c => so.Contains(c));
-            bool coKiTu = matKhau.Any(c => kyTu.Contains(c));
+            bool coThuong = matKhau.Any(c => chuThuong.Contains(c)); //biến kiểm tra mật khẩu có ký tự thường hay không
+            bool coHoa = matKhau.Any(c => chuHoa.Contains(c)); //biến kiểm tra mật khẩu có ký tự hoa hay không
+            bool coSo = matKhau.Any(c => so.Contains(c)); //biến kiểm tra mật khẩu có ký tự số hay không
+            bool coKiTu = matKhau.Any(c => kyTu.Contains(c)); //biến kiểm tra mật khẩu có ký tự đặc biệt hay không
 
             //Đếm số loại ký tự có sử dụng
             int demLoai = 0;
@@ -77,11 +64,8 @@ namespace RandomPassword
 
             //4.Phạt nếu nằm trong danh sách các mật khẩu phổ biến
             //Chưa biết
-            if (KiemTraRoRi(matKhau))
-            {
-                score = 0;
-            }
-            // Đảm bảo điểm không bị âm và không quá 100
+
+            // Đảm bảo điểm không bị âm 
             if (score < 0)
                 score = 0;
             return score;
