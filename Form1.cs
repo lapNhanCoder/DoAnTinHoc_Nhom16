@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace RandomPassword
@@ -37,6 +38,7 @@ namespace RandomPassword
             checkSo.Checked = false;
             checkKyTu.Checked = false;
             txtDoDai.Focus();
+
         }
 
         private void btnTaoMatKhau_Click(object sender, EventArgs e)
@@ -57,13 +59,13 @@ namespace RandomPassword
             // Kiểm tra xem người dùng có chọn ít nhất 1 loại ký tự không
             if (!coThuong && !coHoa && !coSo && !coKyTu)
             {
-                MessageBox.Show("Vui lòng chọn ít nhất một loại ký tự (abc, ABC, 123,...)", 
+                MessageBox.Show("Vui lòng chọn ít nhất một loại ký tự (abc, ABC, 123,...)",
                     "Thiếu tùy chọn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             //Lấy số lượng mật khẩu muốn tạo từ combo box
-            if(cboSoLuong.SelectedItem == null)
+            if (cboSoLuong.SelectedItem == null)
             {
                 cboSoLuong.SelectedItem = 0; //mặc định chọn 1 nếu chưa chọn
             }
@@ -73,25 +75,25 @@ namespace RandomPassword
             txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
             txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
             };
-            
+
             List<string> matKhauDaTao = new List<string>(); // Danh sách tạm để lưu các mật khẩu đã sinh ra trong lần bấm này
 
             int soLuongCanTao = int.Parse(cboSoLuong.SelectedItem.ToString()); //biến chứa số lượng mật khẩu muốn tạo
-
+            int i;
             //Vòng lặp để ẩn, hiện và gán mật khẩu được tạo vào các Textbox
-            for (int i = 0; i < danhSachTextBox.Count; i++)
+            for (i = 0; i < danhSachTextBox.Count; i++)
             {
                 if (i < soLuongCanTao)
                 {
                     danhSachTextBox[i].Visible = true;
 
                     string matKhauMoi = ""; //biến chứa mật khẩu mới được tạo
-                    
+
                     //chạy vòng lặp do-while để kiểm tra mật khẩu đã có trùng không, nếu trùng thì tạo lại
                     do
                     {
                         matKhauMoi = rp.TaoMatKhau(doDaiMatKhau, coThuong, coHoa, coSo, coKyTu);
-                    } 
+                    }
                     while (matKhauDaTao.Contains(matKhauMoi));
 
                     matKhauDaTao.Add(matKhauMoi);
@@ -115,8 +117,26 @@ namespace RandomPassword
                 MessageBox.Show($"Đã xảy ra lỗi trong quá trình tạo mật khẩu: {ex.Message}",
                     "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
 
+            List<Button> buttonCopy = new List<Button>() { btnCopy1, btnCopy2, btnCopy3, btnCopy4, btnCopy5, btnCopy6 };
+
+            int soLuong = int.Parse(cboSoLuong.SelectedItem.ToString());
+
+            //Vòng lặp để ẩn, hiện và gán mật khẩu được tạo vào các Textbox
+            for (int j = 0; j < buttonCopy.Count; j++)
+            {
+                if (j < soLuong)
+                {
+                    buttonCopy[j].Visible = true;
+                }
+                else
+                {
+
+                    buttonCopy[j].Visible = false;
+                }
+
+            }
+        }
         private void btnRating_Click(object sender, EventArgs e)
         {
             Rating rating = new Rating();
@@ -135,6 +155,23 @@ namespace RandomPassword
         {
             try
             {
+                txtDoDai.Text = "";
+                cboSoLuong.SelectedIndex = 0;
+                List<TextBox> danhSachTextBox = new List<TextBox>() {
+            txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
+            txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
+            };
+
+                foreach (TextBox txt in danhSachTextBox)
+                {
+                    txt.Visible = false;
+                }
+                checkThuong.Checked = false;
+                checkHoa.Checked = false;
+                checkSo.Checked = false;
+                checkKyTu.Checked = false;
+                txtDoDai.Focus();
+
                 Random random = new Random();
                 int doDai = random.Next(12, 15); //biến chứ độ dài mật khẩu
                 txtDoDai.Text = doDai.ToString();
@@ -154,6 +191,22 @@ namespace RandomPassword
         {
             try
             {
+                txtDoDai.Text = "";
+                cboSoLuong.SelectedIndex = 0;
+                List<TextBox> danhSachTextBox = new List<TextBox>() {
+            txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
+            txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
+            };
+
+                foreach (TextBox txt in danhSachTextBox)
+                {
+                    txt.Visible = false;
+                }
+                checkThuong.Checked = false;
+                checkHoa.Checked = false;
+                checkSo.Checked = false;
+                checkKyTu.Checked = false;
+                txtDoDai.Focus();
                 Random random = new Random();
                 int doDai = random.Next(10, 12); //biến chứ độ dài mật khẩu
                 txtDoDai.Text = doDai.ToString();
@@ -172,6 +225,22 @@ namespace RandomPassword
         {
             try
             {
+                txtDoDai.Text = "";
+                cboSoLuong.SelectedIndex = 0;
+                List<TextBox> danhSachTextBox = new List<TextBox>() {
+            txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
+            txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
+            };
+
+                foreach (TextBox txt in danhSachTextBox)
+                {
+                    txt.Visible = false;
+                }
+                checkThuong.Checked = false;
+                checkHoa.Checked = false;
+                checkSo.Checked = false;
+                checkKyTu.Checked = false;
+                txtDoDai.Focus();
                 Random random = new Random();
                 int doDai = random.Next(5, 10); //biến chứ độ dài mật khẩu
                 txtDoDai.Text = doDai.ToString();
@@ -189,34 +258,70 @@ namespace RandomPassword
         {
             try
             {
+                txtDoDai.Text = "";
+                cboSoLuong.SelectedIndex = 0;
+                List<TextBox> danhSachTextBox = new List<TextBox>() {
+            txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
+            txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
+            };
+
+                foreach (TextBox txt in danhSachTextBox)
+                {
+                    txt.Visible = false;
+                }
+                checkThuong.Checked = false;
+                checkHoa.Checked = false;
+                checkSo.Checked = false;
+                checkKyTu.Checked = false;
+                txtDoDai.Focus();
                 Random random = new Random();
-                int doDai = random.Next(0,5); //biến chứ độ dài mật khẩu
+                int doDai = random.Next(0, 5); //biến chứ độ dài mật khẩu
                 txtDoDai.Text = doDai.ToString();
+                checkThuong.Checked = true;
             }
             catch (Exception)
             {
                 MessageBox.Show("Loi");
             }
         }
+        private void copy(TextBox txt)
+        {
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                Clipboard.SetText(txt.Text);//Sao chep noi dung vao bo nho tam clipboard
+                MessageBox.Show("Đã copy mật khẩu!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không có mật khẩu để sao chép.", "Cảnh báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<TextBox> danhSachTextBox = new List<TextBox>() {
+                List<TextBox> danhSachTextBox = new List<TextBox>() {
             txtRandomPassword1, txtRandomPassword2, txtRandomPassword3,
             txtRandomPassword4, txtRandomPassword5, txtRandomPassword6,
             };
+                List<Button> buttonCopy = new List<Button>() { btnCopy1, btnCopy2, btnCopy3,
+                btnCopy4, btnCopy5, btnCopy6, };
+                foreach (TextBox txt in danhSachTextBox)
+                {
+                    txt.Visible = false;
+                }
+                foreach (Button btn in buttonCopy)
+                {
+                    btn.Visible = false;
 
-            foreach(TextBox txt in danhSachTextBox)
-            {
-                txt.Visible = false;
-            }
-
-            if(cboSoLuong.Items.Count > 0)
-            {
-                cboSoLuong.SelectedIndex = 0;
-                //set mặc định cho combobox là giá trị đầu khi mở form1
+                }
+                if (cboSoLuong.Items.Count > 0)
+                {
+                    cboSoLuong.SelectedIndex = 0;
+                    //set mặc định cho combobox là giá trị đầu khi mở form1
+                }
             }
         }
     }
-}
 

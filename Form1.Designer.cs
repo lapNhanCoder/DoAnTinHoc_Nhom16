@@ -52,6 +52,12 @@
             this.txtRandomPassword4 = new System.Windows.Forms.TextBox();
             this.txtRandomPassword6 = new System.Windows.Forms.TextBox();
             this.txtRandomPassword5 = new System.Windows.Forms.TextBox();
+            this.btnCopy1 = new System.Windows.Forms.Button();
+            this.btnCopy5 = new System.Windows.Forms.Button();
+            this.btnCopy3 = new System.Windows.Forms.Button();
+            this.btnCopy6 = new System.Windows.Forms.Button();
+            this.btnCopy4 = new System.Windows.Forms.Button();
+            this.btnCopy2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -260,7 +266,7 @@
             // txtRandomPassword2
             // 
             this.txtRandomPassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRandomPassword2.Location = new System.Drawing.Point(776, 337);
+            this.txtRandomPassword2.Location = new System.Drawing.Point(1019, 337);
             this.txtRandomPassword2.Name = "txtRandomPassword2";
             this.txtRandomPassword2.Size = new System.Drawing.Size(273, 34);
             this.txtRandomPassword2.TabIndex = 1;
@@ -276,7 +282,7 @@
             // txtRandomPassword4
             // 
             this.txtRandomPassword4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRandomPassword4.Location = new System.Drawing.Point(776, 409);
+            this.txtRandomPassword4.Location = new System.Drawing.Point(1019, 409);
             this.txtRandomPassword4.Name = "txtRandomPassword4";
             this.txtRandomPassword4.Size = new System.Drawing.Size(273, 34);
             this.txtRandomPassword4.TabIndex = 1;
@@ -284,7 +290,7 @@
             // txtRandomPassword6
             // 
             this.txtRandomPassword6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtRandomPassword6.Location = new System.Drawing.Point(776, 483);
+            this.txtRandomPassword6.Location = new System.Drawing.Point(1019, 483);
             this.txtRandomPassword6.Name = "txtRandomPassword6";
             this.txtRandomPassword6.Size = new System.Drawing.Size(273, 34);
             this.txtRandomPassword6.TabIndex = 1;
@@ -297,11 +303,77 @@
             this.txtRandomPassword5.Size = new System.Drawing.Size(273, 34);
             this.txtRandomPassword5.TabIndex = 1;
             // 
+            // btnCopy1
+            // 
+            this.btnCopy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy1.Location = new System.Drawing.Point(743, 332);
+            this.btnCopy1.Name = "btnCopy1";
+            this.btnCopy1.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy1.TabIndex = 12;
+            this.btnCopy1.Text = "Copy";
+            this.btnCopy1.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy5
+            // 
+            this.btnCopy5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy5.Location = new System.Drawing.Point(743, 478);
+            this.btnCopy5.Name = "btnCopy5";
+            this.btnCopy5.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy5.TabIndex = 13;
+            this.btnCopy5.Text = "Copy";
+            this.btnCopy5.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy3
+            // 
+            this.btnCopy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy3.Location = new System.Drawing.Point(743, 404);
+            this.btnCopy3.Name = "btnCopy3";
+            this.btnCopy3.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy3.TabIndex = 14;
+            this.btnCopy3.Text = "Copy";
+            this.btnCopy3.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy6
+            // 
+            this.btnCopy6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy6.Location = new System.Drawing.Point(1322, 478);
+            this.btnCopy6.Name = "btnCopy6";
+            this.btnCopy6.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy6.TabIndex = 15;
+            this.btnCopy6.Text = "Copy";
+            this.btnCopy6.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy4
+            // 
+            this.btnCopy4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy4.Location = new System.Drawing.Point(1322, 404);
+            this.btnCopy4.Name = "btnCopy4";
+            this.btnCopy4.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy4.TabIndex = 16;
+            this.btnCopy4.Text = "Copy";
+            this.btnCopy4.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy2
+            // 
+            this.btnCopy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCopy2.Location = new System.Drawing.Point(1322, 332);
+            this.btnCopy2.Name = "btnCopy2";
+            this.btnCopy2.Size = new System.Drawing.Size(180, 45);
+            this.btnCopy2.TabIndex = 17;
+            this.btnCopy2.Text = "Copy";
+            this.btnCopy2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 733);
+            this.ClientSize = new System.Drawing.Size(1515, 622);
+            this.Controls.Add(this.btnCopy2);
+            this.Controls.Add(this.btnCopy4);
+            this.Controls.Add(this.btnCopy6);
+            this.Controls.Add(this.btnCopy3);
+            this.Controls.Add(this.btnCopy5);
+            this.Controls.Add(this.btnCopy1);
             this.Controls.Add(this.cboSoLuong);
             this.Controls.Add(this.btnYeu);
             this.Controls.Add(this.btnKha);
@@ -360,6 +432,12 @@
         private System.Windows.Forms.TextBox txtRandomPassword4;
         private System.Windows.Forms.TextBox txtRandomPassword6;
         private System.Windows.Forms.TextBox txtRandomPassword5;
+        private System.Windows.Forms.Button btnCopy1;
+        private System.Windows.Forms.Button btnCopy5;
+        private System.Windows.Forms.Button btnCopy3;
+        private System.Windows.Forms.Button btnCopy6;
+        private System.Windows.Forms.Button btnCopy4;
+        private System.Windows.Forms.Button btnCopy2;
     }
 }
 
